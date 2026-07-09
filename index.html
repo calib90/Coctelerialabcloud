@@ -1218,8 +1218,8 @@ body::before{
     <!-- Mode toggle -->
     <div style="display:flex;gap:8px;margin-bottom:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(200,169,110,0.12);border-radius:5px;padding:4px">
       <button id="ucv-btn-liquid" onclick="ucvSetMode('liquid')" style="flex:1;padding:9px;background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.3);border-radius:3px;color:#C8A96E;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s">💧 Liquid</button>
-      <button id="ucv-btn-solid" onclick="ucvSetMode('solid')" style="flex:1;padding:9px;background:none;border:1px solid transparent;border-radius:3px;color:#3A3020;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s">⚖️ Solid</button>
-      <button id="ucv-btn-cross" onclick="ucvSetMode('cross')" style="flex:1;padding:9px;background:none;border:1px solid transparent;border-radius:3px;color:#3A3020;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s">🔀 Liquid ↔ Solid</button>
+      <button id="ucv-btn-solid" onclick="ucvSetMode('solid')" style="flex:1;padding:9px;background:none;border:1px solid transparent;border-radius:3px;color:rgba(240,232,216,0.5);font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s">⚖️ Solid</button>
+      <button id="ucv-btn-cross" onclick="ucvSetMode('cross')" style="flex:1;padding:9px;background:none;border:1px solid transparent;border-radius:3px;color:rgba(240,232,216,0.5);font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s">🔀 Liquid ↔ Solid</button>
     </div>
 
     <!-- Input card -->
@@ -3266,7 +3266,7 @@ function ucvSetMode(mode) {
     const active = m === mode;
     btn.style.background = active ? 'rgba(200,169,110,0.15)' : 'none';
     btn.style.border = active ? '1px solid rgba(200,169,110,0.3)' : '1px solid transparent';
-    btn.style.color = active ? '#C8A96E' : '#3A3020';
+    btn.style.color = active ? '#C8A96E' : 'rgba(240,232,216,0.5)';
   });
   document.getElementById('ucv-ing-row').style.display = mode === 'cross' ? 'block' : 'none';
   ucvPopulateFrom();
@@ -3368,10 +3368,10 @@ function ucvRender() {
   document.getElementById('ucv-results').innerHTML = `
     <div style="background:rgba(255,255,255,0.025);border:1px solid rgba(200,169,110,0.12);border-radius:5px;padding:14px 16px;margin-bottom:14px;display:flex;align-items:center;gap:12px">
       <div>
-        <div style="font-size:9px;letter-spacing:.2em;color:#3A3020;text-transform:uppercase;margin-bottom:3px">Base value</div>
+        <div style="font-size:9px;letter-spacing:.2em;color:rgba(240,232,216,0.45);text-transform:uppercase;margin-bottom:3px">Base value</div>
         <div style="font-family:'DM Serif Display',serif;font-size:26px;color:${summaryColor};font-weight:700">${ucvFmt(baseVal)} <span style="font-size:13px;color:#5a4a30">${baseLabel}</span></div>
       </div>
-      <div style="font-size:11px;color:#3A3020;line-height:1.6">
+      <div style="font-size:11px;color:rgba(240,232,216,0.45);line-height:1.6">
         from ${ucvFmt(amount)} ${fromUnit.label}
       </div>
     </div>`;
@@ -3388,7 +3388,7 @@ function ucvRender() {
 
 function ucvRow(label, val) {
   return `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid rgba(255,255,255,.022)">
-    <span style="font-size:11px;letter-spacing:.1em;color:#5A4A32;text-transform:uppercase">${label}</span>
+    <span style="font-size:11px;letter-spacing:.1em;color:rgba(240,232,216,0.65);text-transform:uppercase">${label}</span>
     <span style="font-family:'DM Serif Display',serif;font-size:16px;color:#C8A96E;font-weight:700">${ucvFmt(val)}</span>
   </div>`;
 }
