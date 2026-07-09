@@ -697,7 +697,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink)}
 .aci-leg-txt{font-size:7.5px;color:rgba(240,232,216,0.45);letter-spacing:.1em;text-transform:uppercase}
 .aci-footer{text-align:center;margin-top:16px;font-size:8.5px;color:rgba(240,232,216,0.4);letter-spacing:.1em}
 #tea-root,#tea-root *{box-sizing:border-box;}
-#tea-root{height:100%;background:#0a0d0c;overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:'DM Sans',sans-serif;color:#fff;}
+#tea-root{height:100%;background:transparent;overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:'DM Sans',sans-serif;color:#fff;}
 #tea-root select option{background:#0d1410;color:#fff;}
 #tea-root textarea{min-height:56px;resize:vertical;}
 #tea-root input[type=range]{accent-color:#86c9a1;height:4px;cursor:pointer;}
@@ -3902,7 +3902,7 @@ function Modal(props) {
     style: {position:"fixed", inset:0, background:"rgba(0,0,0,0.88)", backdropFilter:"blur(12px)", zIndex:200,
       overflowY:"scroll", WebkitOverflowScrolling:"touch", overscrollBehavior:"contain"}
   },
-    h("div", {style:{background:"#0d1410", borderRadius:"20px 20px 0 0", minHeight:"65vh", marginTop:"10vh",
+    h("div", {style:{background:"rgba(10,12,9,0.92)", borderRadius:"20px 20px 0 0", minHeight:"65vh", marginTop:"10vh",
       padding:"18px 15px 40px", border:"1px solid rgba(134,201,161,0.14)", borderBottom:"none",
       wordBreak:"break-word", overflowWrap:"break-word"}},
       props.children
@@ -4786,7 +4786,7 @@ function TeaLab() {
   var filtBlends = blends.filter(function(b){return (!favOnly||b.favorites)&&b.name.toLowerCase().indexOf(search.toLowerCase())!==-1;});
   var CNT = {library:ings.length,blends:blends.length,journal:journal.length,history:history.length};
 
-  return h("div",{style:{maxWidth:430,margin:"0 auto",minHeight:"100vh",background:"#0a0d0c",color:"#fff",fontFamily:"DM Sans,sans-serif",position:"relative",overflowX:"hidden"}},
+  return h("div",{style:{maxWidth:430,margin:"0 auto",minHeight:"100vh",background:"transparent",color:"#fff",fontFamily:"DM Sans,sans-serif",position:"relative",overflowX:"hidden"}},
 
     h("header",{style:{position:"sticky",top:0,zIndex:50,background:"rgba(10,13,12,0.96)",backdropFilter:"blur(14px)",borderBottom:"1px solid rgba(255,255,255,0.06)",padding:"0 15px",display:"flex",alignItems:"center",gap:8,height:48}},
       h("span",{style:{fontFamily:"Playfair Display,serif",fontSize:16,fontWeight:700,color:"#86c9a1",flex:1}},"\u2726 Tea Lab"),
@@ -4917,7 +4917,7 @@ ReactDOM.createRoot(document.getElementById("tea-root")).render(React.createElem
 
 </script>
 
-<div class="lab-pane" id="lab-pane-tealab" style="overflow:hidden;background:#0a0d0c">
+<div class="lab-pane" id="lab-pane-tealab" style="overflow:hidden">
   <div id="tea-root" style="height:100%">
     <div id="tea-loading" style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#86c9a1" stroke-width="1.5" style="animation:teaSpin 1.2s linear infinite"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
