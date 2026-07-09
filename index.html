@@ -63,20 +63,13 @@
 /* ── BODY + BACKGROUND ──────────────────────────────────────────────────── */
 html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink)}
 
-body{
-  background-image:url('bg_texture.jpg');
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-position:center center;
-}
-
 body::before{
   content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
   background:
-    rgba(6,4,2,0.62),
+    rgba(6,4,2,0.60),
     radial-gradient(ellipse 65% 50% at 12% 18%,rgba(200,169,110,0.1) 0%,transparent 60%),
-    radial-gradient(ellipse 55% 45% at 88% 82%,rgba(200,169,110,0.07) 0%,transparent 60%);
+    radial-gradient(ellipse 55% 45% at 88% 82%,rgba(200,169,110,0.07) 0%,transparent 60%),
+    url('bg_texture.jpg') center/cover no-repeat;
   animation:bgBreath 10s ease-in-out infinite;
 }
 
